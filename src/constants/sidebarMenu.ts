@@ -1,4 +1,4 @@
-import { Home, ChartNoAxesCombined, Store, Wallet } from "lucide-react";
+import { Home, ChartNoAxesCombined, Store } from "lucide-react";
 
 export interface SiderbarMenu {
   label: string;
@@ -30,12 +30,5 @@ export const SIDEBAR_MENUS: SiderbarMenu[] = [
     key: "가맹점관리",
     icon: Store,
     children: [{ label: "가맹점 조회", key: "가맹점 조회" }],
-  },
-
-  {
-    label: "정산 관리",
-    key: "정산관리",
-    icon: Wallet,
-    children: [{ label: "가맹점 정산 조회", key: "가맹점 정산 조회" }],
   },
 ];

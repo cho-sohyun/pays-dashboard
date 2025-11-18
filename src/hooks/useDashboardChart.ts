@@ -35,7 +35,7 @@ export function useDashboardChart() {
         grouped[key] += amount;
       });
 
-      // grouped 객체를 Recharts용 배열 형태로 변환
+      // grouped 객체를 배열 형태로 변환
       const result: ChartData[] = Object.entries(grouped).map(
         ([date, amount]) => ({
           date,
