@@ -1,0 +1,30 @@
+html,
+body {
+  height: 100%;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+textarea {
+  outline: none;
+  font-family: inherit;
+}
+
+.recharts-wrapper:focus,
+.recharts-wrapper *:focus,
+.recharts-responsive-container:focus,
+.recharts-responsive-container *:focus {
+  outline: none !important;
+}
