@@ -7,6 +7,7 @@ import type { Merchant } from "../types/merchants";
 
 export interface PaymentWithMerchant extends Payment {
   merchantName: string;
+  paymentDate: string;
 }
 
 export function useRecentPayments() {
@@ -36,6 +37,7 @@ export function useRecentPayments() {
           (p: Payment): PaymentWithMerchant => ({
             ...p,
             merchantName: merchantMap.get(p.mchtCode) ?? "미확인 가맹점",
+            paymentDate: p.paymentAt.slice(0, 10),
           })
         );
         setData(formatted);

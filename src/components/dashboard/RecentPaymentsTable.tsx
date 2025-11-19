@@ -3,7 +3,8 @@ import {
   type PaymentWithMerchant,
 } from "../../hooks/useRecentPayments";
 import formatDate from "../../utils/formatDate";
-import Table, { type Column } from "../common/Table";
+import Table from "../table/Table";
+import type { Column } from "../table/Table";
 
 export default function RecentPaymentsTable() {
   const { data, loading } = useRecentPayments();

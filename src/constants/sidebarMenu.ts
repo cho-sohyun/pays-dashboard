@@ -22,19 +22,9 @@ export const SIDEBAR_MENUS: SiderbarMenu[] = [
     icon: ChartNoAxesCombined,
     children: [
       {
-        label: "기간별 매출",
-        key: "기간별 매출",
-        path: "/transactions/period",
-      },
-      {
-        label: "가맹점별 매출",
-        key: "가맹점별 매출",
-        path: "/transactions/merchant",
-      },
-      {
-        label: "결제수단별 매출",
-        key: "결제수단별 매출",
-        path: "/transactions/payment-method",
+        label: "거래내역 조회",
+        key: "거래내역 조회",
+        path: "/transactions",
       },
     ],
   },
@@ -44,7 +34,7 @@ export const SIDEBAR_MENUS: SiderbarMenu[] = [
     key: "가맹점관리",
     icon: Store,
     children: [
-      { label: "가맹점 조회", key: "가맹점 조회", path: "/merchants/list" },
+      { label: "가맹점 조회", key: "가맹점 조회", path: "/merchants" },
     ],
   },
 ];

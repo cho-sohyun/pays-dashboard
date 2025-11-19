@@ -40,14 +40,11 @@ export default function Sidebar() {
             );
           }
 
-          // 거래내역, 가맹점 관리, 정산 관리
+          // 거래내역, 가맹점 관리
           return (
             <div key={menu.key}>
               <div
-                onClick={() => {
-                  toggleMenu(menu.key);
-                  if (menu.path) navigate(menu.path);
-                }}
+                onClick={() => toggleMenu(menu.key)}
                 className={`flex items-center justify-between px-3 py-2 rounded-md cursor-pointer
                   ${
                     activeMenu === menu.key

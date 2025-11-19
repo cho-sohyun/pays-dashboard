@@ -1,6 +1,6 @@
 export interface Column<T> {
   key: keyof T;
-  label: string;
+  label: string | React.ReactNode;
   render?: (value: T[keyof T], row: T) => React.ReactNode;
 }
 
