@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { ChevronRight, ChevronDown } from "lucide-react";
 import { SIDEBAR_MENUS } from "../../constants/sidebarMenu";
+import { useNavigate } from "react-router-dom";
 
 export default function Sidebar() {
   const [openMenu, setOpenMenu] = useState<Record<string, boolean>>({});
   const [activeMenu, setActiveMenu] = useState("");
+  const navigate = useNavigate();
 
   const toggleMenu = (menuKey: string) => {
     setOpenMenu((prev) => ({ ...prev, [menuKey]: !prev[menuKey] }));
@@ -21,7 +23,10 @@ export default function Sidebar() {
             return (
               <div
                 key={menu.key}
-                onClick={() => setActiveMenu(menu.key)}
+                onClick={() => {
+                  setActiveMenu(menu.key);
+                  if (menu.path) navigate(menu.path);
+                }}
                 className={`flex items-center gap-3 px-3 py-2 rounded-md cursor-pointer
                   ${
                     activeMenu === menu.key
@@ -39,7 +44,10 @@ export default function Sidebar() {
           return (
             <div key={menu.key}>
               <div
-                onClick={() => toggleMenu(menu.key)}
+                onClick={() => {
+                  toggleMenu(menu.key);
+                  if (menu.path) navigate(menu.path);
+                }}
                 className={`flex items-center justify-between px-3 py-2 rounded-md cursor-pointer
                   ${
                     activeMenu === menu.key
@@ -65,7 +73,10 @@ export default function Sidebar() {
                   {menu.children.map((child) => (
                     <li
                       key={child.key}
-                      onClick={() => setActiveMenu(child.key)}
+                      onClick={() => {
+                        setActiveMenu(child.key);
+                        navigate(child.path);
+                      }}
                       className={`cursor-pointer px-2 py-1 rounded-md
                         ${
                           activeMenu === child.key
