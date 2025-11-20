@@ -1,73 +1,73 @@
-# React + TypeScript + Vite
+# (주)올페이즈 프론트엔드 과제
+Pays Dashboard는 결제/가맹점 데이터를 기반으로
+매출 분석, 거래 현황, 활성 가맹점 현황을 제공하는
+대시보드 화면 페이지 입니다.
+<br />
+<br />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+### 1️⃣ 대시보드 (Dashboard Page)
+1. 총매출 / 실매출
+2. 승인건수 / 취소건수
+3. 승인율 / 취소율
+4. 활성 / 비활성 가맹점 요약
+5. 기간별 매출 차트 (Line Chart)
+6. 가맹점 TOP5
+7. 최근 거래내역 테이블
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+### 2️⃣ 거래 내역 조회 (Transaction List)
+1. 결제 데이터 + 가맹점명을 조합하여 테이블로 표시
+2. 날짜 / 가맹점코드 / 가맹점명 / 결제수단 / 상태 등 필터링 기능
+3. 드롭다운 필터 적용
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+### 3️⃣ 가맹점 리스트 조회 (Merchant List)
+1. 가맹점 상세 데이터를 테이블로 표시
+2. 가맹점명 / 주소 / 연락처 / 업종 / 등록일 / 수정일 등 표시
+3. 상단 검색창에서 실시간 검색
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 기술 스택
+- React
+- Vite
+- TypeScript
+- React Router DOM
+- Tailwind CSS
+- axios
+- chart : Recharts
+- Icon : Lucide Icons 
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+### 로컬 실행
+```
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 환경 변수
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+`Vite: VITE_API_BASE_URL=https://recruit.paysbypays.com/api/v1`
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+### 디자인 / 레이아웃
+- 이 프로젝트는 별도의 템플릿 없이 직접 레이아웃과 UI를 구성했습니다.
+  - 단, 레이아웃 + 콘텐츠 구조는 토스플레이스 UI를 참고했습니다.
+
+#### ✨ 디자인 의도 & UI/UX 포인트
+
+- 컬러는 절제된 Gray + Blue 컬러 톤으로 설정하였습니다. 
+
+- 실무 스타일의 관리자 대시보드 흐름을 구현하는 데 중점을 두고 설계를 해보았습니다.
+
+- 결제/가맹점 데이터를 빠르게 확인할 수 있도록 토스플레이스의 레이아웃 구조를 참고하여 정보 우선순위가 명확한 UI를 구성했습니다.
+
+- 메인 대시보드 페이지는 사용자가 필요한 정보를 확인할 수 있도록 카드형 요약 → 그래프 → 상세 테이블 순으로 구성하였습니다.
+  <br />또한, 빠른 검색·필터 기능을 통해 데이터 중심의 효율적인 UX를 지향했습니다.
+
+
+
