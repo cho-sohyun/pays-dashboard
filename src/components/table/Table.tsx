@@ -24,18 +24,19 @@ export default function Table<T extends object>({
           ))}
         </tr>
       </thead>
-
       <tbody>
         {data.map((row, idx) => (
           <tr
             key={idx}
-            className="border-b border-gray-200 hover:bg-gray-100 transition text-sm"
+            className="border-b border-gray-200 hover:bg-gray-100 transition"
           >
             {columns.map((col) => {
               const value = row[col.key];
-
               return (
-                <td key={String(col.key)} className="p-3">
+                <td
+                  key={String(col.key)}
+                  className="p-3 relative overflow-visible"
+                >
                   {col.render ? col.render(value, row) : String(value)}
                 </td>
               );

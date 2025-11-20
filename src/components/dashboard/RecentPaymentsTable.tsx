@@ -52,7 +52,10 @@ export default function RecentPaymentsTable() {
       <h2 className="text-lg font-semibold mb-4 text-gray-700">
         최근 거래 내역
       </h2>
-      <Table columns={columns} data={sortedData} />
+
+      <div className="overflow-x-auto">
+        <Table columns={columns} data={sortedData} />
+      </div>
     </div>
   );
 }

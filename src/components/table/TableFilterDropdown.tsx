@@ -29,7 +29,7 @@ export default function TableFilterDropdown({
   return (
     <div
       ref={ref}
-      className="absolute right-0 top-7 bg-white border border-gray-300 rounded-md w-48 z-20 p-3 max-h-60 overflow-y-auto"
+      className="absolute left-0 top-full mt-2 bg-white border border-gray-300 rounded-md w-48 z-20 p-3 max-h-60 overflow-y-auto"
     >
       {options.map((opt) => (
         <label

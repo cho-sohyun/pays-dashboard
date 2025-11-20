@@ -143,7 +143,7 @@ export default function TransactionListPage() {
       <h1 className="text-2xl font-semibold mb-6">거래 내역 조회</h1>
 
       {/* 요약 영역 */}
-      <div className="grid grid-cols-4 gap-4 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
         <SummaryCard
           title="총매출"
           value={summary.totalAmount.toLocaleString() + "원"}
@@ -162,7 +162,7 @@ export default function TransactionListPage() {
       </div>
 
       {/* 테이블 */}
-      <div className="bg-white p-6 rounded-xl border border-gray-200">
+      <div className="overflow-x-auto bg-white p-6 rounded-xl border border-gray-200 text-xs sm:text-sm">
         <Table columns={columns} data={filteredData} />
       </div>
     </div>

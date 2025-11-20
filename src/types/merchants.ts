@@ -14,7 +14,7 @@ export interface MerchantResponse {
 export interface MerchantDetail {
   mchtCode: string;
   mchtName: string;
-  status: string;
+  status: "ACTIVE" | "INACTIVE" | "READY" | "CLOSED";
   bizType: string;
   bizNo: string;
   address: string;
@@ -29,13 +29,6 @@ export interface MerchantDetailListResponse {
   status: number;
   message: string;
   data: MerchantDetail[];
-}
-
-// 가맹점 코드로 상세 조회 단일 객체 응답 타입
-export interface MerchantDetailResponse {
-  status: number;
-  message: string;
-  data: MerchantDetail;
 }
 
 export interface MerchantQueryParams {

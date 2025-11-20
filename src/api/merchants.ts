@@ -1,6 +1,5 @@
 import api from "./client";
 import type {
-  Merchant,
   MerchantResponse,
   MerchantQueryParams,
   MerchantDetail,
@@ -19,17 +18,9 @@ export const getMerchantsList = async (
 export const getMerchantsDetail = async (params?: {
   mchtCode?: string;
 }): Promise<MerchantDetail[]> => {
-  const response = await await api.get<MerchantDetailListResponse>(
-    "/metchants/details",
+  const response = await api.get<MerchantDetailListResponse>(
+    "/merchants/details",
     { params }
   );
   return response.data.data;
-};
-
-// 가맹점 상세 (path param)
-export const getMerchantsByCode = async (
-  mchtCode: string
-): Promise<Merchant> => {
-  const response = await api.get(`/merchants/${mchtCode}`);
-  return response.data;
 };

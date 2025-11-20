@@ -68,7 +68,9 @@ export default function DashboardPage() {
       </div>
 
       {/* 최근 거래내역 */}
-      <RecentPaymentsTable />
+      <div className="text-xs sm:text-sm">
+        <RecentPaymentsTable />
+      </div>
     </div>
   );
 }
